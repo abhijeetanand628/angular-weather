@@ -1,5 +1,35 @@
-<div class="flex justify-center w-full px-4 pt-6 mb-2">
-    <div class="bg-[#9999FF] rounded-3xl relative w-full max-w-[500px] h-[265px] shadow-xl">
 
+<div class="flex justify-center w-full px-4 pt-6 mb-2">
+  <div class="bg-gradient-to-r from-[#9999FF] to-[#C4C6FF] rounded-3xl relative w-full max-w-[500px] h-[265px] shadow-xl p-8">
+
+    <!-- Heading and icon -->
+    <div class="flex items-center gap-3">
+      <svg
+        lucideWind
+        [size]="34"
+        class="text-white"
+      ></svg>
+
+      <h2 class="text-white text-2xl font-bold">
+        Air Quality
+      </h2>
     </div>
+
+    <!-- AQI number and status -->
+    <div class="flex items-center justify-between mt-6">
+      <p class="text-white text-6xl font-semibold leading-none">
+        {{ airQuality.aqi }}
+      </p>
+
+      <span class="bg-yellow-500 text-white text-sm font-bold px-4 py-2 rounded-full">
+        {{ airQuality.status }}
+      </span>
+    </div>
+
+    <!-- Description -->
+    <p class="text-white text-sm leading-6 mt-5">
+      {{ airQuality.description }}
+    </p>
+
+  </div>
 </div>

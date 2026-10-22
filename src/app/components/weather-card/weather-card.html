@@ -27,21 +27,25 @@
       <div class="grid grid-cols-2 gap-4">
 
         <div class="bg-[#C4C6FF] h-[140px] rounded-2xl flex flex-col items-center justify-center">
+          <svg lucideDroplet [size]="24" class="text-white mb-3"></svg>
           <p class="text-white text-xl font-semibold">{{ weather.humidity }}%</p>
           <p class="text-white text-md mt-3 font-semibold">Humidity</p>
         </div>
 
         <div class="bg-[#C4C6FF] h-[140px] rounded-2xl flex flex-col items-center justify-center">
+          <svg lucideWind [size]="24" class="text-white mb-3"></svg>
           <p class="text-white text-xl font-semibold">{{ weather.windSpeed }} km/h</p>
           <p class="text-white text-md mt-3 font-semibold">Wind Speed</p>
         </div>
 
         <div class="bg-[#C4C6FF] h-[140px] rounded-2xl flex flex-col items-center justify-center">
+          <svg lucideThermometer [size]="24" class="text-white mb-3"></svg>
           <p class="text-white text-xl font-semibold">{{ weather.feelsLike }}°C</p>
           <p class="text-white text-md mt-3 font-semibold">Feels Like</p>
         </div>
 
         <div class="bg-[#C4C6FF] h-[140px] rounded-2xl flex flex-col items-center justify-center">
+          <svg lucideSunrise [size]="28" class="text-white mb-3"></svg>
           <div class="flex gap-4 text-white text-center">
             <div>
               <p class="font-semibold">{{ weather.sunrise }}</p>
