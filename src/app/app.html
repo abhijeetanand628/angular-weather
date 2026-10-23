@@ -1,4 +1,6 @@
-<app-search-bar></app-search-bar>
-<app-weather-card></app-weather-card>
+<app-search-bar (citySearch)="loadWeather($event)"></app-search-bar>
+@if (weatherData(); as data) {
+  <app-weather-card [data]="data"></app-weather-card>
+}
 <app-weather-forecast></app-weather-forecast>
 <app-air-quality-card></app-air-quality-card>

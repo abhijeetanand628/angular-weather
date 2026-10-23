@@ -1,6 +1,10 @@
 <div class="flex justify-center w-full px-4 pt-10">
-  <div class="relative w-full max-w-[480px]">
+  <form
+    class="relative w-full max-w-[480px]"
+    (submit)="$event.preventDefault(); searchCity(cityInput.value)"
+  >
     <input
+      #cityInput
       class="h-[65px] w-full p-6 bg-[#9999FF] rounded-full
              text-white font-semibold border-none shadow-xl
              placeholder-white text-lg outline-gray-400"
@@ -8,10 +12,13 @@
       placeholder="Enter city name"
     />
 
-    <svg
-      lucideSearch
-      [size]="25"
-      class="absolute right-5 top-1/2 -translate-y-1/2 text-white cursor-pointer"
-    ></svg>
-  </div>
+    <button
+      type="submit"
+      aria-label="Search city"
+      class="absolute right-5 top-1/2 -translate-y-1/2
+             text-white cursor-pointer"
+    >
+      <svg lucideSearch [size]="25"></svg>
+    </button>
+  </form>
 </div>

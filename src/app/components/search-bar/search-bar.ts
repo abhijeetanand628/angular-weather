@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LucideSearch } from '@lucide/angular';
 
 @Component({
@@ -8,4 +8,15 @@ import { LucideSearch } from '@lucide/angular';
   styleUrl: './search-bar.css',
 })
 export class SearchBar {
+  @Output() citySearch = new EventEmitter<string>();
+
+  searchCity(city: string) {
+    const trimmedCity = city.trim();
+
+    if(!trimmedCity) {
+      return;
+    }
+
+    this.citySearch.emit(trimmedCity);
+  }
 }
