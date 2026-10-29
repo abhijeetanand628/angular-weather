@@ -1,6 +1,27 @@
-<app-search-bar (citySearch)="loadWeather($event)"></app-search-bar>
+<app-search-bar
+  (citySearch)="loadWeather($event)"
+></app-search-bar>
+
+@if (isLoading()) {
+  <p class="text-white text-center mt-4" role="status">
+    Fetching weather...
+  </p>
+}
+
+@if (weatherError()) {
+  <div
+    class="mx-auto mt-4 max-w-[480px] px-4 text-center"
+    role="alert"
+  >
+    <p class="text-red-100 font-semibold">
+      {{ weatherError() }}
+    </p>
+  </div>
+}
+
 @if (weatherData(); as data) {
   <app-weather-card [data]="data"></app-weather-card>
 }
+
 <app-weather-forecast></app-weather-forecast>
 <app-air-quality-card></app-air-quality-card>

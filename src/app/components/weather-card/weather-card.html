@@ -1,8 +1,9 @@
 <div class="flex justify-center w-full px-4 pt-8">
-    <div class="bg-[#9999FF] rounded-3xl relative w-full max-w-[500px] h-[590px] shadow-xl p-8">
+    <div class="bg-[#9999FF] rounded-3xl relative w-full max-w-[500px] min-h-[590px] h-auto shadow-xl p-5 sm:p-8">
 
       <div class="text-center">
-        <h1 class="text-white text-3xl sm:text-4xl font-semibold">
+        <h1 class="text-white text-2xl sm:text-3xl md:text-4xl
+           font-semibold leading-tight break-words">
           {{ weather.city }}, {{ weather.region }}, {{ weather.country }}
         </h1>
 
@@ -11,7 +12,7 @@
         </p>
       </div>
 
-      <div class="flex items-center justify-center gap-5 mt-12 mb-12">
+      <div class="flex flex-wrap items-center justify-center gap-5 mt-10 mb-10">
         <p class="text-white text-5xl sm:text-6xl font-light">
           {{ weather.temperature }}°C
         </p>

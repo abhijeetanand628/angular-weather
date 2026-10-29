@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { LucideSearch } from '@lucide/angular';
 
 @Component({
@@ -10,7 +10,9 @@ import { LucideSearch } from '@lucide/angular';
 export class SearchBar {
   @Output() citySearch = new EventEmitter<string>();
 
-  searchCity(city: string) {
+  @ViewChild('cityInput') cityinput!: ElementRef<HTMLInputElement>;
+
+  searchCity(city: string, input: HTMLInputElement) {
     const trimmedCity = city.trim();
 
     if(!trimmedCity) {
@@ -18,5 +20,9 @@ export class SearchBar {
     }
 
     this.citySearch.emit(trimmedCity);
+  }
+
+  clearInput() {
+    this.cityinput.nativeElement.value = '';
   }
 }

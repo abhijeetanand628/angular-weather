@@ -1,7 +1,7 @@
 <div class="flex justify-center w-full px-4 pt-10">
   <form
     class="relative w-full max-w-[480px]"
-    (submit)="$event.preventDefault(); searchCity(cityInput.value)"
+    (submit)="$event.preventDefault(); searchCity(cityInput.value, cityInput)"
   >
     <input
       #cityInput
